@@ -1,0 +1,688 @@
+/* Declaração das fontes */
+@font-face {
+    font-family: dosis-book;
+    src: url('fonts/dosis-book.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: dosis-bold;
+    src: url('fonts/dosis-bold.ttf') format("truetype");
+}
+
+/* Zeramento de margem, padding e configuração base do texto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: dosis-book;
+    color: #646464;
+}
+
+/* Divisão principal do Grid Desktop / Tablet */
+.container {
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+
+/* Cabeçalho geral: H1, busca e menu de navegação Desktop */
+header {
+    /* border: solid red; */
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+}
+
+/* Caixa branca do cabeçalho */
+.menu-desktop {
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px
+}
+
+/* Título principal */
+h1 {
+    width: 100%;
+    font-family: dosis-bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Cor laranja do título "doar e adotar" */
+h1>b {
+    font-family: dosis-bold;
+    color: #ff9f32;
+}
+
+/* Div contendo imagem da lupa + input de busca */
+.caixa-busca {
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+/* Configuração do tamanho da imagem da lupa */
+.caixa-busca>img {
+    height: 40px;
+}
+
+/* Estilização da caixa de busca */
+#busca {
+    border: 0 none;
+    padding-left: 15px;
+    border-radius: 20px;
+    width: 230px;
+    font-size: 16px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização da caixa de busca quando em foco */
+input:focus {
+    border: 0 none;
+    outline: 0;
+}
+
+/* Div contendo os 4 links de navegação */
+.menu-superior {
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+}
+
+/* Configuração da altura dos ícones no menu desktop */
+.menu-superior>a>img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Estilização dos links de navegação */
+.menu-superior>a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Adição de um espaço do texto do link para o próximo ícone de navegação */
+.menu-superior>a>p {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* Estilização quando o mouse passa em cima dos links de navegação */
+.menu-superior>a:hover {
+    text-decoration: underline;
+}
+
+/* Tirar o espaço de margem do último link do menu através de ID único */
+#chat-desktop {
+    margin: 0;
+}
+
+/* Configuração do menu de navegação quando a tela for igual ou menor que 1200px */
+@media (max-width: 1200px) {
+
+    /* Regra para ocultar o menu desktop */
+    .menu-superior {
+        display: none;
+    }
+
+    /* Botão hamburger */
+    .btn-tablet {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Div contendo os links de navegação mobile após clicar no hamburguer */
+    .menu-tablet-interno {
+        /* Position relative para a div Main não cobrir o menu */
+        position: relative;
+        z-index: 999;
+        margin-top: 10px;
+        float: right;
+        width: 340px;
+        height: auto;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-flow: row wrap;
+        justify-content: center;
+        row-gap: 30px;
+    }
+
+    /* Configuração dos links do menu */
+    .menu-tablet-interno>a {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    /* Configuração dos links quando o mouse passa em cima */
+    .menu-tablet-interno>a:hover {
+        text-decoration: underline;
+    }
+
+    /* Configuração dos ícones do menu */
+    .menu-tablet-interno>a>img {
+        margin-right: 85px;
+        height: 35px;
+    }
+}
+
+/* Regra para ocultar o botão hamburguer quando a tela for maior que 1200px */
+@media (min-width: 1201px) {
+    .btn-tablet {
+        display: none;
+    }
+}
+
+
+
+/* Regra para esconder o menu quando estiver na versão mobile */
+@media (max-width: 600px) {
+    .menu-desktop {
+        display: none;
+    }
+}
+
+/* Configuração da coluna da logo */
+.logo {
+    /* border: solid red; */
+    height: 100%;
+    padding: 15px 15px 15px 15px;
+    grid-area: aside;
+    display: flex;
+    flex-flow: row;
+}
+
+.caixa-logo {
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.caixa-logo>img {
+    width: 100%;
+    max-width: 200px;
+    min-width: 100px;
+}
+
+/* Configuração do título versão mobile */
+.titulo {
+    text-align: center;
+}
+
+/* Regra para esconder o titulo quando estiver no menu desktop */
+@media (min-width: 601px) {
+    .titulo {
+        display: none;
+    }
+}
+
+/* Configuração do bloco principal */
+main {
+    /* border: solid salmon; */
+    display: flex;
+    justify-content: center;
+
+}
+
+.bloco-principal {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.animal {
+    display: flex;
+    flex-flow: row;
+}
+/* Configuração das fotos do animal */
+.fotos-animal {
+    display: flex;
+    flex-flow: row;
+}
+.foto-principal {
+    /* border: solid blue; */
+    display: flex;
+    flex-flow: column;
+}
+
+#pipoca {
+    border-radius: 20px;
+    
+}
+
+.fotos {
+    /* border: solid #646464; */
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.fotos>img {
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* Configuração das informações do animal */
+.nome-local {
+    /* border: solid #ff9f32; */
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.nome-local>h1 {
+    text-align: left;
+}
+
+.caracteristicas-animal {
+    /* border: solid #646464; */
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;  
+}
+
+#cao {
+    padding-left: 20px;
+}
+
+#pelo {
+    padding-left: 20px;
+}
+
+.caracteristicas-animal img {
+    margin: 10px;
+}
+
+.caracteristicas-animal h4 {
+    text-align: center;
+}
+
+.descricao {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#descricao {
+    font-size: 14px;
+    padding-top: 20px;
+    padding-right: 5px;
+    margin-bottom: 20px;
+}
+
+.compartilhamento {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-right: 20px;
+}
+
+.compartilhamento img {
+    margin-right: 10px;
+}
+
+/* Configuracao dos comentarios feitos */
+.secao-comm {
+    /* margin-top: 40px; */
+    padding-right: 20px;
+    display: flex;
+    flex-flow: column;
+}
+
+#post {
+    display: flex;
+    flex-flow: row;
+    margin-top: 10px;
+    
+}
+
+#img-comm {
+    display: flex;
+    flex-flow: column;
+}
+
+#comm {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    
+    
+    
+}
+
+.secao-comm div {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 5px;
+}
+
+.secao-comm div img {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.secao-comm div h5 {
+    width: 100%;
+}
+
+.secao-comm div p {
+    font-size: 12px;
+    width: calc(100% - 40px);
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Configurações do perfil do doador */
+
+.perfil-doador {
+    /* border: solid #646464; */
+    display: flex;
+    flex-flow: column wrap;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    max-width: 280px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+
+
+/* Regra para esconder o menu quando estiver na versão mobile */
+@media (max-width: 600px) {
+
+    .perfil-doador {
+        display: none;
+    }
+}
+
+.cabecalho-doador {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+#doador {
+    text-align: center;
+}
+
+#tipo-doador {
+    font-size: 14px;
+    text-align: center;
+}
+
+#img_ong {
+    margin: 20px 70px 0px 70px;
+}
+
+.informacoes-doador {
+    /* border: solid #646464; */
+    display: flex;
+    flex-flow: row;
+    
+}
+
+.icones {
+    /* border: solid black; */
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: 25px;
+}
+
+.icone {
+    margin: 0px 10px 20px 10px;
+}
+
+.infos {
+    /* border: solid salmon; */
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 5px;
+    
+}
+
+.infos>a {
+    text-decoration: none;
+}
+
+.infos>a:hover{
+    text-decoration: underline;
+}
+
+.info {
+    margin-bottom: 35px;
+}
+
+/* Configuração das caixas de comentários */
+.comentarios {
+    /* border: solid salmon; */
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 50px;
+    
+}
+
+.comentarios h4 {
+    margin-bottom: 10px;
+    margin-top: 20px;
+   
+}
+
+#caixa-nome {
+    border: 0 none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+    border: 0 none;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+
+.btn-enviar {
+    background-color: #ff9f32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    
+}
+
+.btn-enviar:hover {
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.btn-enviar>p {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+.btn-enviar>p:hover {
+    text-decoration: underline;
+}
+
+/* Configuração breakpoint 1024px width */
+@media (max-width: 1024px) {
+    #pipoca {
+        height: 100%;
+        width: 100%;
+    }
+
+    
+}
+
+/* Configuração tela mobile max-width 800px */
+@media (max-width: 800px) {
+    header {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .caixa-logo {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 20px;
+    }
+
+    .bloco-principal {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .animal {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .foto-principal {
+        padding-left: 20px;
+    }
+
+    .comentarios {
+        padding: 20px 20px 20px 20px;
+    }
+}
+
+/* Configuração tela mobile max-width 600px */
+@media (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-flow: column;
+    }
+
+    header {
+        align-items: normal;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .fotos-animal {
+        justify-content: center;
+    }
+
+    .nome-local {
+        display: none;
+    }
+
+    .informacoes {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .caracteristicas-animal {
+        justify-content: center;
+    }
+    
+    
+}
+
+/* Regra para ocultar o menu de celular quando a tela for >601px */
+@media (min-width: 601px) {
+    .btn-celular {
+        display: none;
+    }
+}
+
+/* Configuração menu celular */
+
+@media (max-width: 600px) {
+    .btn-celular {
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row;
+    }
+
+    .menu-celular-interno {
+        border-radius: 20px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        background-color: white;
+        float: right;
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        padding: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .menu-celular-interno>a>img {
+        height: 35px;
+        margin-right: 35px;
+    }
+
+    .menu-celular-interno>a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 5px;
+        text-decoration: none;
+    }
+
+    .menu-celular-interno>a:hover {
+        text-decoration: underline;
+    }
+
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um novo conceito para doar e adotar cães e gatos">
+    <meta name="keywords" content="adotar, doar, cachorros, gatos, cães, ong, animal, doméstico">
+    <meta name="copyright" content="© Lar pro Bicho">
+    <meta name="author" content="Lorena Terenzi">
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+    <link rel="stylesheet" href="visuanimal.css">
+    <script type="text/javascript" src="visuanimal.js"></script>
+
+    <title>Visualização do Animal</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+
+            <!-- Menu hamburguer para navegação telas menores que 601px -->
+            <nav class="btn-celular" onclick="clickMenu()">
+                <img src="imagens/hamburger.svg" alt="Ícone menu hamburger" id="hamburger">
+
+                <!-- Div que comporta todos os ícones e links do menu mobile. ID menuMobile é utilizado na função de mostrar ao clicar no JS -->
+                <div class="menu-celular-interno" id="menuCelular">
+
+                    <!-- Links com ícones do menu mobile -->
+                    <a href="../sabrina-cadastro-de-animais/cadastro-de-animais.html">
+                        <img src="imagens/icone_adicionar.svg" alt="Icone adição">
+                        <p>Doe um bichinho</p>
+                    </a>
+
+                    <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html">
+                        <img src="imagens/icone_mao-coracao.svg" alt="Icone mão com coração">
+                        <p>Minhas doações</p>
+                    </a>
+
+                    <a href="../alicia-cadastro-de-usuario/cadastro-usuario.html">
+                        <img src="imagens/icone_lista-check.svg" alt="Prancheta com simbolo de check">
+                        <p>Cadastre-se</p>
+                    </a>
+
+                    <a href="#">
+                        <img src="imagens/icone_chat.svg" alt="Icone de chat">
+                        <p>Chat</p>
+                    </a>
+
+                </div>
+
+            </nav>
+
+            <!--Logo superior-->
+            <a href="../danilo-pagina-inicial/index.html" class="caixa-logo">
+                <img src="imagens/logo.svg" alt="Logo Lar pro Bicho">
+            </a>
+
+            <!-- Tag H1 para mobile -->
+            <div class="titulo">
+                <h1>Conheça o <b>Pipoca</b></h1>
+                <h5>Marília, SP</h5>
+            </div>
+
+            <!-- Tag H1 e caixa branca do header -->
+            <nav class="menu-desktop">
+                <h1>Conheça o <b>Pipoca</b></h1>
+
+                <!--Caixa de pesquisa-->
+                <div class="caixa-busca">
+                    <img src="imagens/icone_lupa.svg" alt="Lupa de busca">
+                    <input type="text" name="busca" id="busca" placeholder="Busque por um termo específico">
+                </div>
+
+                <!--Menu de navegação telas >1200px-->
+                <nav class="menu-superior">
+                    <a href="../sabrina-cadastro-de-animais/cadastro-de-animais.html">
+                        <img src="imagens/icone_adicionar.svg" alt="Icone adição">
+                        <p>Doe um bichinho</p>
+                    </a>
+
+                    <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html">
+                        <img src="imagens/icone_mao-coracao.svg" alt="Icone mão com coração">
+                        <p>Minhas doações</p>
+                    </a>
+
+                    <a href="../alicia-cadastro-de-usuario/cadastro-usuario.html">
+                        <img src="imagens/icone_lista-check.svg" alt="Prancheta com simbolo de check">
+                        <p>Cadastre-se</p>
+                    </a>
+
+                    <a href="">
+                        <img src="imagens/icone_chat.svg" alt="Icone de chat">
+                        <p id="chat-desktop">Chat</p>
+                    </a>
+
+                </nav>
+
+                <!--Botão Hamburger - Menu de navegação telas entre 1200-600px-->
+                <nav class="btn-tablet" onclick="clickMenu()">
+                    <img src="imagens/hamburger.svg" alt="Ícone menu hamburger" id="hamburger">
+
+                    <!-- Div que comporta todos os ícones e links do menu mobile. ID menuMobile é utilizado na função de mostrar ao clicar no JS -->
+                    <div class="menu-tablet-interno" id="menuMobile">
+
+                        <!-- Links com ícones do menu mobile -->
+                        <a href="../sabrina-cadastro-de-animais/cadastro-de-animais.html">
+                            <img src="imagens/icone_adicionar.svg" alt="Icone adição">
+                            <p>Doe um bichinho</p>
+                        </a>
+
+                        <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html">
+                            <img src="imagens/icone_mao-coracao.svg" alt="Icone mão com coração">
+                            <p>Minhas doações</p>
+                        </a>
+
+                        <a href="../alicia-cadastro-de-usuario/cadastro-usuario.html">
+                            <img src="imagens/icone_lista-check.svg" alt="Prancheta com simbolo de check">
+                            <p>Cadastre-se</p>
+                        </a>
+
+                        <a href="#">
+                            <img src="imagens/icone_chat.svg" alt="Icone de chat">
+                            <p>Chat</p>
+                        </a>
+
+                    </div>
+
+                </nav>
+
+
+            </nav>
+        </header>
+
+        <main>
+            <!-- Bloco principal -->
+            <section class="bloco-principal">
+
+                <!-- Seção animal -->
+                <section class="animal">
+                    <!-- Imagens do animal -->
+                    <nav class="fotos-animal">
+                        <!-- Foto Principal do Animal-->
+                        <section class="foto-principal">
+                            <div class="foto-animal">
+                                <img src="imagens/pipoca.jpg" alt="animal-adoção" height="300px" width="300px"
+                                    id="pipoca">
+                            </div>
+                        </section>
+
+                        <!-- Fotos Laterais -->
+                        <section class="fotos">
+                            <img src="imagens/pipoca.jpg" alt="foto" height="50px" width="50px">
+                            <img src="imagens/pipoca.jpg" alt="foto" height="50px" width="50px">
+                            <img src="imagens/pipoca.jpg" alt="foto" height="50px" width="50px">
+                            <img src="imagens/pipoca.jpg" alt="foto" height="50px" width="50px">
+                            <img src="imagens/pipoca.jpg" alt="foto" height="50px" width="50px">
+
+                        </section>
+                    </nav>
+                    <!-- Informações do animal -->
+                    <section class="informacoes">
+                        <div class="nome-local">
+                            <h1><b>Pipoca</b></h1>
+                            <h5>Marília, SP</h5>
+                        </div>
+
+                        <!-- Imagens das características do animal -->
+                        <div class="caracteristicas-animal">
+                            <div class="tipo">
+                                <h4>Tipo de Animal</h4>
+                                <img src="imagens/icone_cachorro.svg" alt="cachorro" height="40px" id="cao">
+                            </div>
+                            <div class="porte">
+                                <h4>Porte</h4>
+                                <img src="imagens/icone_p.svg" alt="pequeno" height="40px">
+                            </div>
+                            <div class="sexo">
+                                <h4>Sexo</h4>
+                                <img src="imagens/icone_m.svg" alt="masculino" height="40px">
+                            </div>
+                            <div class="cor">
+                                <h4>Cor da Pelagem</h4>
+                                <img src="imagens/icone_branco.svg" alt="branca" height="40px" id="pelo">
+                            </div>
+                        </div>
+
+                        <!-- Descrição do animal -->
+                        <div class="descricao">
+                            <h4>Descrição</h4>
+                            <p id="descricao">Super dócil, carinhoso e amigável, foi encontrado na Av. dos Estados.
+                                Aguardando
+                                um dono na ONG Amor Animal.</p>
+                        </div>
+
+                        <!-- Imagens e links de compartilhamento com outras redes -->
+                        <div class="compartilhamento">
+                            <a href=""><img src="imagens/Facebook_icon_2013.svg" alt="facebook" height="25px"
+                                    id="facebook"></a>
+                            <a href=""><img src="imagens/Instagram_logo_2016.svg.webp" alt="instagram"
+                                    height="25px"></a>
+                            <h4>Compartilhe nas redes sociais</h4>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Seção de comentários -->
+                <section class="comentarios">
+                    <form id="formulario">
+                        <h4>O que achou deste animalzinho? Deixe seu comentário abaixo!</h4>
+                        <input type="text" name="nome" id="caixa-nome" placeholder="Nome">
+                        <textarea name="comentario" rows="10" cols="50" id="espaco-comentario"
+                            placeholder="Digite seu comentário"></textarea>
+                        <button type="submit" class="btn-enviar" onclick="postar()">
+                            <p>Comentar</p>
+                        </button>
+                    </form>
+                    <section class="secao-comm">
+                        <h4>Comentários</h4>
+                        <div id="post">
+                         
+                            <div id="comm">
+
+                            </div>
+                        </div>
+                    </section>
+
+                </section>
+
+            </section>
+
+            <!-- Perfil do Doador -->
+            <aside class="perfil-doador">
+
+                <!-- Cabeçalho com imagem principal -->
+                <div class="cabecalho-doador">
+                    <h1><b>Contato<br>Responsável</b></h1>
+                    <p id="doador">ONG Amor Animal</p>
+                    <p id="tipo-doador">O.N.G</p>
+                    <a href=""><img border-radius: 50%; src="imagens/img_ong.png" alt="ong" height="60%" width="50%"
+                            id="img_ong"></a>
+                </div>
+
+                <!-- Informações do doador e ícones -->
+                <nav class="informacoes-doador">
+                    <div class="icones">
+                        <a href=""><img class="icone" src="imagens/icone_whatsapp.svg" alt="whatsapp" height="30px"></a>
+                        <a href=""><img class="icone" src="imagens/icone_telefone.svg" alt="telefone" height="30px"></a>
+                        <a href=""><img class="icone" src="imagens/icone_email.svg" alt="email" height="30px"></a>
+                        <a href=""><img class="icone" src="imagens/icone_chat.svg" alt="chat" height="30px"></a>
+                        <a href=""><img class="icone" src="imagens/icone_denuncia.svg" alt="denuncia" height="30px"></a>
+                    </div>
+                    <div class="infos">
+                        <a href="">
+                            <p class="info">(11) 99615-2237</p>
+                        </a><a href="">
+                            <p class="info">(11) 2548-1933</p>
+                        </a><a href="">
+                            <p class="info">contato@amoranimal.com.br</p>
+                        </a><a href="">
+                            <p class="info">Chat</p>
+                        </a><a href="">
+                            <p class="info">Denunciar perfil</p>
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+
+        </main>
+    </div>
+</body>
+<script src="comments.js"></script>
+
+</html>
